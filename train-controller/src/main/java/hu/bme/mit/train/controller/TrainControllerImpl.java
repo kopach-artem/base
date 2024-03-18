@@ -16,6 +16,7 @@ public class TrainControllerImpl implements TrainController {
 		TimerService ts;
 		Timer timer = ts.createTimer(1000, 1000 );
 		followSpeed();
+		//here is the changedcode
 	}
 
 	@Override
