@@ -1,5 +1,7 @@
 package hu.bme.mit.train.controller;
 
+import javax.swing.Timer;
+
 import hu.bme.mit.train.interfaces.TrainController;
 
 public class TrainControllerImpl implements TrainController {
@@ -7,6 +9,15 @@ public class TrainControllerImpl implements TrainController {
 	private int step = 0;
 	private int referenceSpeed = 0;
 	private int speedLimit = 0;
+	private Timer t;
+
+	public TrainControllerImpl(){
+		@Resource
+		TimerService ts;
+		Timer timer = ts.createTimer(1000, 1000 );
+		followSpeed();
+		//here is the changedcode
+	}
 
 	@Override
 	public void followSpeed() {
